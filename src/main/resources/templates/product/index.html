@@ -30,6 +30,9 @@
             <td scope="row" th:text="${product.description}"></td>
             <td scope="row" th:text="${product.price}"></td>
             <td scope="row" th:text="${product.stock}"></td>
+            <td>
+              <a th:href="@{/product/delete/{id}(id=${product.id})}">Deletar</a>
+            </td>
           </tr>
         </tbody>
       </table>
