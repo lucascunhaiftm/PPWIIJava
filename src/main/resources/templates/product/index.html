@@ -33,7 +33,7 @@
       </table>
       <div class="row">
         <a th:href="@{/product/create}">
-          <button class="btn btn-primary">Cadastrar Produto</button>
+          <button sec:authorize="hasAuthority('Admin')" class="btn btn-primary">Cadastrar Produto</button>
         </a>
       </div>
     </div>

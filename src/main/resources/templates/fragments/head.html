@@ -45,7 +45,7 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul  class="navbar-nav mr-auto">
-        <li sec:authorize="hasAuthority('Admin')" class="nav-item dropdown active">
+        <li class="nav-item dropdown active">
           <a
             class="nav-link dropdown-toggle"
             th:href="@{/product}"
@@ -59,7 +59,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" th:href="@{/product}">Listar</a>
-            <a class="dropdown-item" th:href="@{/product/create}">Cadastrar</a>
+            <a sec:authorize="hasAuthority('Admin')" class="dropdown-item" th:href="@{/product/create}">Cadastrar</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
