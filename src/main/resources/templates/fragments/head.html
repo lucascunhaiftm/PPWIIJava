@@ -43,9 +43,9 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div sec:authorize="hasAuthority('Admin')" class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item dropdown active">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul  class="navbar-nav mr-auto">
+        <li sec:authorize="hasAuthority('Admin')" class="nav-item dropdown active">
           <a
             class="nav-link dropdown-toggle"
             th:href="@{/product}"
@@ -65,6 +65,10 @@
           </div>
         </li>
       </ul>
+      <form class="form-inline my-2 my-lg-0" action="/logout" method="post">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+        <button type="submit" class="btn my-2 my-sm-0">Sair</button>
+      </form>
     </div>
   </div>
 </nav>
